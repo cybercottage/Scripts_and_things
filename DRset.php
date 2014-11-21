@@ -3,6 +3,7 @@ $dnsip = $_POST['seturl'];
 $sender = $_POST['sender'];
 $astcmd = $_POST['astcmd'];
 $test = $_POST['test'];
+//The following sets teh testdns or live dns name to the ip
 if ($test == "Test")
 {
 $dnshost = "testHOSTNAME.dns.org";
