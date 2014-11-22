@@ -27,8 +27,8 @@ $pieces = explode("/", $PartyId);
 //echo $pieces[1];
 //echo $pieces[2];
 //echo $pieces[3];
-//echo $pieces[4]; // piece4
-//echo $pieces[5]; // piece5
+//echo $pieces[4];
+//echo $pieces[5];
 //echo $pieces[6];
 //echo $pieces[7];
 $PartyID = explode("?", $pieces[4]);
@@ -104,19 +104,13 @@ fwrite($data,"New call: $today $strChannel $strExten\n");
 
 fclose($data);
 
-
-
-
-
 #--------------------------------------------------------------------------------------------
 
 #Shouldn't need to edit anything below this point to make this script work
 
 #--------------------------------------------------------------------------------------------
 
-
 #echo   $strExten;
-
 
 $strExten = preg_replace('/\s+/', '', $strExten);
 
@@ -138,10 +132,7 @@ $strExten = $strPref;
 
 #specify the caller id for the call
 
-
 $strCallerId = "$strCallid <$strCallid>";
-
-
 
 $length = strlen($strExten);
 
@@ -216,7 +207,6 @@ $datetime = $today;
 
 echo $strCallid;
 
-
 $myxml="<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n
 <historyItem>\n
   <note>Call made to $number at $datetime. Please update this note if required</note>\n
@@ -239,15 +229,12 @@ else
 $capsulepage =  "https://YOURNAME.capsulecrm.com/api/party/$PartyID[0]/history";
 }
 
-
-
 //$capsulepage =  "https://YOURNAME.capsulecrm.com/api/party/$PartyID[0]/history";
 
 echo $capsulepage;
 
 // Initialise the session and return a cURL handle to pass to other cURL functions.
 $ch = curl_init($capsulepage);
-
 // set appropriate options NB these are the minimum necessary to achieve a post with a useful response
 // ...can and should add more in a real application such as
 // timeout CURLOPT_CONNECTTIMEOUT
@@ -268,7 +255,6 @@ $responseInfo = curl_getinfo($ch);
 curl_close($ch);
 
 ?>
-
 
 </body>
 
